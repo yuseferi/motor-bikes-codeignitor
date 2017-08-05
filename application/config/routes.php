@@ -52,7 +52,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // user login/logout
 $route['register'] = 'user/register';
 $route['login'] = 'user/login';
-$route['logout'] = 'user/logout';
+$route['logout'] = 'user/logout ';
+
+
+$route['products'] = 'product/list_product';
+$route['product/details/(:num)'] = 'product/show_product/$1';
+$route['admin/product/add'] = 'product/add_product';
+$route['admin/product/delete/(:num)'] = 'product/delete';
+
 
 
 $route['default_controller'] = 'welcome';
