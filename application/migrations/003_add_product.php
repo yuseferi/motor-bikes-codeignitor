@@ -25,9 +25,14 @@ class Migration_Add_product extends CI_Migration
           'constraint' => '100',
         ),
         'color' => array(
-          'type' => 'INT',
+          'type' => 'VARCHAR',
           'unsigned' => true,
-          'constraint' => 2,
+          'constraint' => 20,
+        ),
+        'weight' => array(
+          'type' => 'VARCHAR',
+          'unsigned' => true,
+          'constraint' => 30,
         ),
         'price' => array(
           'type' => 'VARCHAR',
@@ -36,6 +41,9 @@ class Migration_Add_product extends CI_Migration
         'image' => array(
           'type' => 'VARCHAR',
           'constraint' => '255',
+        ),
+        'created_at' => array(
+          'type' => 'TIMESTAMP',
         ),
       )
     );
