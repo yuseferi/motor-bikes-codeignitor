@@ -26,7 +26,7 @@ class Migration_Add_user extends CI_Migration
           'type' => 'VARCHAR',
           'constraint' => '255',
         ),
-        'created_at' => array(
+        'created_in' => array(
           'type' => 'TIMESTAMP',
         ),
         'last_access' => array(

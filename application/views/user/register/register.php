@@ -22,12 +22,12 @@
 			<?= form_open() ?>
 				<div class="form-group">
 					<label for="username">Username</label>
-					<input type="text" class="form-control" id="username" name="username" placeholder="Enter a username">
+					<input type="text" class="form-control" id="username" name="username" placeholder="Enter a username" value="<?=set_value('username');?>">
 					<p class="help-block">At least 4 characters, letters or numbers only</p>
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label>
-					<input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+					<input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" value="<?=set_value('email');?>">
 					<p class="help-block">A valid email address</p>
 				</div>
 				<div class="form-group">

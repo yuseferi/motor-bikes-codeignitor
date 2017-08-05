@@ -87,3 +87,9 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 /* custom Constants */
 define('PRJ_NAME','SB MotorBikes');
+define('ITEM_PER_PAGE',5);
+define('BIKE_COLORS', serialize(array(
+  "RED" =>"RED",
+  "BLUE" => "BLUE",
+  "CYAN" =>"CYAN",
+)));

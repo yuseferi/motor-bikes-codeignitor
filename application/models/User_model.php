@@ -42,7 +42,7 @@ class User_model extends CI_Model {
       'username'   => $username,
       'email'      => $email,
       'password'   => $this->hash_password($password),
-      'created_at' => date('Y-m-j H:i:s'),
+      'created_in' => date('Y-m-j H:i:s'),
     );
 
     return $this->db->insert('users', $data);
