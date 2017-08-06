@@ -99,9 +99,11 @@ class product extends CI_Controller {
       if ($this->product_model->create_product($model, $cc, $color, $weight ,$owner, $price,$image_name)) {
 
         // create product have been done
-        $this->load->view('templates/header',$data);
-        $this->load->view('product/list_product', $data);
-        $this->load->view('templates/footer');
+//
+//        $this->load->view('templates/header',$data);
+//        $this->load->view('product/list_product', $data);
+//        $this->load->view('templates/footer');
+        redirect('/products');
 
       } else {
 

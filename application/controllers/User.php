@@ -132,10 +132,10 @@ class user extends CI_Controller {
         $_SESSION['logged_in'] = (bool) TRUE;
 
         // user login ok
-        $this->load->view('templates/header', $data);
-        $this->load->view('user/login/login_success', $data);
-        $this->load->view('templates/footer');
-        redirect('/admin');
+//        $this->load->view('templates/header', $data);
+//        $this->load->view('user/login/login_success', $data);
+//        $this->load->view('templates/footer');
+        redirect('/products');
 
       }
       else {
