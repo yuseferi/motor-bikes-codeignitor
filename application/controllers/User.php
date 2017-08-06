@@ -19,13 +19,15 @@ class user extends CI_Controller {
     parent::__construct();
     $this->load->library(['session']);
     $this->load->helper(['url']);
+    $this->load->helper('site');
     $this->load->model('user_model');
+    $this->load->library('unit_test');
 
   }
 
 
   public function index() {
-
+    redirect('/login');
   }
 
   /**
@@ -36,9 +38,14 @@ class user extends CI_Controller {
    */
   public function register() {
 
+    // redirect user to products page when logged in
+    if(user_is_logged_in()){
+      redirect('/products');
+    }
+
     // create the data object
     $data = new stdClass();
-
+    $data->title = "Register User";
     // load form helper and validation library
     $this->load->helper('form');
     $this->load->library('form_validation');
@@ -96,8 +103,14 @@ class user extends CI_Controller {
    */
   public function login() {
 
+    // redirect user to products page when logged in
+    if(user_is_logged_in()){
+      redirect('/products');
+    }
+
     // create the data object
     $data = new stdClass();
+    $data->title = "Login User";
 
     // load form helper and validation library
     $this->load->helper('form');
@@ -164,6 +177,7 @@ class user extends CI_Controller {
 
     // create the data object
     $data = new stdClass();
+    $data->title = "Logout User";
 
     if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === TRUE) {
 

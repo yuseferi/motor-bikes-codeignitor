@@ -21,12 +21,13 @@ class product extends CI_Controller {
     $this->load->library(array('session'));
     $this->load->helper(array('url'));
     $this->load->helper(array('site'));
+    $this->load->library('unit_test');
 
   }
 
 
   public function index() {
-
+      redirect('/products');
   }
 
   /**
@@ -37,12 +38,13 @@ class product extends CI_Controller {
    */
   public function add_product() {
 
-
+    // only logged in users can add new product
     if(!user_is_logged_in()){
         redirect('login');
     }
     // create the data object
     $data = new stdClass();
+    $data->title = "Add New Product(Bike)";
     // this is not optimum solution,color table is right solution  but seems ok for now
     $data->colors = unserialize(BIKE_COLORS);
 
@@ -128,6 +130,7 @@ class product extends CI_Controller {
     $data->id = $id;
     $this->load->model('product_model');
     $data->product= $this->product_model->get_product($id);
+    $data->title = "Product Detail page" . $data->product->title;
     $this->load->view('templates/header',$data);
     $this->load->view('product/details_product', $data);
     $this->load->view('templates/footer');
@@ -144,6 +147,7 @@ class product extends CI_Controller {
     $max_offset = 0;
     $offset= 0;
     $data = new stdClass();
+    $data->title = "Product list";
     $filter = NULL;
     $page   = $this->input->get( 'page' );
     if(!$page){
