@@ -130,7 +130,7 @@ class product extends CI_Controller {
     $data->id = $id;
     $this->load->model('product_model');
     $data->product= $this->product_model->get_product($id);
-    $data->title = "Product Detail page" . $data->product->model;
+    $data->title = "Product Detail page : " . $data->product->model;
     $this->load->view('templates/header',$data);
     $this->load->view('product/details_product', $data);
     $this->load->view('templates/footer');
